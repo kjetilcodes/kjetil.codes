@@ -1,0 +1,23 @@
+$COLOR-primary: #003355;
+$COLOR-secondary: #000854;
+$COLOR-third: #00544b;
+
+
+@function COLOR-primary-transp($percentage) {
+  $result: #{$COLOR-primary} + $percentage;
+  @return $result;
+}
+
+@mixin flex-center-self {
+  display: flex;
+  align-self: center;
+  justify-self: center;
+}
+
+@mixin flex-center-children {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+$FONT-1: #222222;
