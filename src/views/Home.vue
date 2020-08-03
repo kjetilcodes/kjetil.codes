@@ -5,10 +5,11 @@
         <h1>About me</h1>
         <ul>
           <li v-for="(prop, key) in intro" :key="key" class="intro-li-item">
-            <span>{{key}}:</span>
-            <span>{{prop}}</span>
+            <span class="about-key">{{key}}:</span>
+            <span class="about-prop">{{prop}}</span>
           </li>
         </ul>
+        <p>I have been learning web-development over the course of a few years. I'm increasingly looking to the security and privacy aspect of the web.</p>
       </article>
       <article>
         <h1>Skills:</h1>
@@ -59,7 +60,8 @@ export default {
         Name: "Kjetil",
         Nationality: "Norway",
         Born: "'89",
-        Occupation: "Student working in retail"
+        Occupation: "Student working in retail",
+        Availability: "Will consider all opportunities"
       },
       skills: {
         javascript: 80,
@@ -163,6 +165,23 @@ export default {
   padding: 10px 23px;
   width: auto;
   border-radius: 10px;
+}
+
+.about-key {
+  font-weight: bold;
+}
+
+.intro-li-item {
+  display: flex;
+  flex-direction: row;
+  max-width: 400px;
+  justify-content: space-between;
+  span {
+    margin: 4px 0;
+  }
+  .about-prop {
+    width: 50%;
+  }
 }
 
 @media (min-width: 700px) {

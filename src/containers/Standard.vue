@@ -16,14 +16,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-li {
-  list-style-type: none;
-}
-
-li.intro-li-item:before {
-  content: "</>";
-}
-
 @media (min-width: 500px) {
   article {
     min-width: 100%;
@@ -47,6 +39,10 @@ li.intro-li-item:before {
     max-width: 30vw;
     color: $FONT-1;
     margin: 10px;
+  }
+
+  li {
+    list-style-type: none;
   }
 }
 </style>
