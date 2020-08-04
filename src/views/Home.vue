@@ -12,14 +12,13 @@
         <p>I have been learning web-development over the course of a few years. I'm increasingly looking to the security and privacy aspect of the web.</p>
       </article>
       <article>
-        <h1>Skills:</h1>
+        <h1>Skills</h1>
         <ul class="skill-box">
           <li
             v-for="(prop, key) in skills"
             :key="key"
             class="skill-li-item"
             :class="key"
-            :style="setBrandColor(key)"
             :data-skillValue="prop"
           >
             <span class="skill" :class="key">{{key}}:</span>
@@ -65,6 +64,7 @@ export default {
       },
       skills: {
         javascript: 80,
+        typescript: 70,
         vuejs: 60,
         react: 50,
         css: 95,
@@ -75,6 +75,10 @@ export default {
         javascript: {
           gradient: "linear-gradient(120deg, #f7df1e, #FFFFFF)",
           color: "#f7df1e"
+        },
+        typescript: {
+          gradient: "linear-gradient(120deg, #152740, #FFFFFF)",
+          color: "rgb(41, 78, 128)"
         },
         vuejs: {
           gradient: "linear-gradient(120deg, #42b883, #35495e)",
@@ -129,7 +133,7 @@ export default {
         });
     },
     setBrandColor(key) {
-      return `background-color:${this.brands[key].color}33;`;
+      return `background: ${this.brands[key].gradient};`;
     }
   },
   mounted() {
@@ -140,15 +144,14 @@ export default {
       const brandName = skillItem
         .getAttribute("class")
         .replace("skill-li-item ", "");
-      const { gradient } = this.brands[brandName];
-      line.style.background = gradient;
+      const { color } = this.brands[brandName];
+      line.style.backgroundColor = color;
       line.style.minWidth = `${skillValue}%`;
       line.style.maxWidth = `${skillValue}%`;
       line.style.minHeight = "10px";
       line.style.maxHeight = "10px";
       line.style.borderRadius = "10px";
       line.style.padding = "5px";
-      line.style.border = "2px solid #ffffff";
       skillItem.insertBefore(line, skillItem.firstElementChild);
     });
   }
