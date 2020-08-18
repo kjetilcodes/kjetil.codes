@@ -164,6 +164,7 @@ export default {
   border-radius: 10px;
   padding: 20px;
 }
+
 .skill-li-item {
   padding: 10px 23px;
   width: auto;

@@ -17,6 +17,11 @@ export default Vue.extend({
 
 <style lang="scss">
 @import "../node_modules/normalize.css/normalize.css";
+
+li {
+  list-style-type: none;
+}
+
 a {
   text-decoration: none;
   text-decoration: underline;
